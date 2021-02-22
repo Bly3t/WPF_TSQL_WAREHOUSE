@@ -1,0 +1,57 @@
+﻿<Window x:Class="WpfApp3.addWindowPracownicy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="addWindowPracownicy" Height="370" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Content="ID Pracownika:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="0" />
+        <Label Content="Imię:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="1" />
+        <Label Content="Nazwisko:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="2" />
+        <Label Content="Data Urodzenia:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="3" />
+        <Label Content="Data Zatrudnienia:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="4" />
+        <Label Content="Data Zwolnienia:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="5" />
+        <Label Content="Pesel:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="6" />
+        <Label Content="Adres:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="7" />
+        <Label Content="Miasto:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="8" />
+        <Label Content="E-mail:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="9" />
+
+        <TextBox Name="txtpracownikID" IsEnabled="False" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="0" />
+        <TextBox Name="txtimie" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="1" />
+        <TextBox Name="txtnazwisko" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="2" />
+        <TextBox Name="txtdataUrodzenia" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="3" />
+        <TextBox Name="txtdataZatrudnienia" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="4" />
+        <TextBox Name="txtdataZwolnienia" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="5" />
+        <TextBox Name="txtpesel" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="6" />
+        <TextBox Name="txtadres" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="7" />
+        <TextBox Name="txtmiasto" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="8" />
+        <TextBox Name="txtemail" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="9" />
+
+        <WrapPanel Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5">
+            <Button Name="btnOK" Content="Dodaj" Width="150" Margin="2" Click="btnOK_Click" />
+            <Button Name="btnAnuluj" Content="Anuluj" Width="150" Margin="2" Click="btnAnuluj_Click" />
+        </WrapPanel>
+    </Grid>
+</Window>

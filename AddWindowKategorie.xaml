@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp3.AddWindowKategorie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="AddWindowKategorie" Height="160" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Content="ID kategorii:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="0" />
+        <Label Content="Nazwa kategorii:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="1" />
+        <Label Content="Opis:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="2" />
+
+        <TextBox Name="txtkategoriaID" IsEnabled="False" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="0" />
+        <TextBox Name="txtnazwaKategoria" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="1" />
+        <TextBox Name="txtopis" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="2" />
+
+        <WrapPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5">
+            <Button Name="btnOK" Content="Dodaj" Width="150" Margin="2" Click="btnOK_ClickKategorie" />
+            <Button Name="btnAnuluj" Content="Anuluj" Width="150" Margin="2" Click="btnAnuluj_ClickKategorie" />
+        </WrapPanel>
+    </Grid>
+</Window>

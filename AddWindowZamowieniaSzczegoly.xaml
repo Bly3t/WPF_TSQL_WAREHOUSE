@@ -1,0 +1,56 @@
+﻿<Window x:Class="WpfApp3.AddWindowZamowieniaSzczegoly"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="AddWindowZamowieniaSzczegoly" Height="190" Width="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <Label Content="Zamowienie:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="0" />
+        <Label Content="Produkt:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="1" />
+        <Label Content="Ilosc:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="2" />
+
+
+        <ComboBox x:Name="cbIDZamowienieSzczegoly" Grid.Column="1" Grid.Row="0" Width="auto" Margin="2" SelectedValuePath="zamowienieID">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Margin="2" Grid.Column="0" Text="{Binding nazwaFirmy}"/>
+                        <TextBlock Margin="2" Grid.Column="1" Text="{Binding imie}"/>
+                        <TextBlock Margin="2" Grid.Column="2" Text="{Binding nazwisko}"/>
+                    </Grid>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <ComboBox x:Name="cbIDProdukt" Grid.Column="1" Grid.Row="1" Width="auto" Margin="2" DisplayMemberPath="nazwaProduktu" SelectedValuePath="produktID"></ComboBox>
+ 
+        <TextBox Name="txtilosc" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="2" />
+
+
+
+        <WrapPanel Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5">
+            <Button Name="btnOK" Content="Dodaj" Width="150" Margin="2" Click="btnOK_Click" />
+            <Button Name="btnAnuluj" Content="Anuluj" Width="150" Margin="2" Click="btnAnuluj_Click" />
+        </WrapPanel>
+    </Grid>
+</Window>

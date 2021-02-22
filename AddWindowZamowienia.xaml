@@ -1,0 +1,81 @@
+﻿<Window x:Class="WpfApp3.AddWindowZamowienia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="AddWindowZamowienia" Height="370" Width="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Content="ID Zamowienia:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="0" />
+        <Label Content="Pracownik:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="1" />
+        <Label Content="Kurier:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="2" />
+        <Label Content="Klient:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="3" />
+        <Label Content="Data zamowienia:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="4" />
+        <Label Content="Data Nadania:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="5" />
+        <Label Content="Adres docelowy:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="6" />
+        <Label Content="Miasto docelowe:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="7" />
+        <Label Content="Kod pocztowy:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="8" />
+        <Label Content="Kraj dostarczenia:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="0" Grid.Row="9" />
+
+        <TextBox Name="txtzamowienieID" IsEnabled="False" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="0" />
+        
+        
+        
+        
+        <ComboBox x:Name="cbIDPracownik" Grid.Column="1" Grid.Row="1" Width="auto" Margin="2" SelectedValuePath="pracownikID">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Margin="2" Grid.Column="0" Text="{Binding imie}"/>
+                        <TextBlock Margin="2" Grid.Column="1" Text="{Binding nazwisko}"/>
+                    </Grid>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        
+        
+        
+        
+        <ComboBox x:Name="cbIDKuriera" Grid.Column="1" Grid.Row="2" Width="auto" Margin="2" DisplayMemberPath="nazwaFirmy" SelectedValuePath="kurierID"></ComboBox>
+        <ComboBox x:Name="cbIDKlienta" Grid.Column="1" Grid.Row="3" Width="auto" Margin="2" DisplayMemberPath="nazwaFirmy" SelectedValuePath="klientID"></ComboBox>
+        <TextBox Name="txtdataZamowienia" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="4" />
+        <TextBox Name="txtdataNadania" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="5" />
+        <TextBox Name="txtadresDocelowy" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="6" />
+        <TextBox Name="txtmiastoDocelowe" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="7" />
+        <TextBox Name="txtkodPocztowy" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="8" />
+        <TextBox Name="txtkrajDostarczenia" IsEnabled="True" VerticalContentAlignment="Center" Margin="2" Grid.Column="1" Grid.Row="9" />
+
+
+        <WrapPanel Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5">
+            <Button Name="btnOK" Content="Dodaj" Width="150" Margin="2" Click="btnOK_Click" />
+            <Button Name="btnAnuluj" Content="Anuluj" Width="150" Margin="2" Click="btnAnuluj_Click" />
+        </WrapPanel>
+    </Grid>
+</Window>

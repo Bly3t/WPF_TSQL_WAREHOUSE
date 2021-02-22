@@ -1,0 +1,174 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="474*" />
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Button Name="BtnPolacz" Content="Połącz" Width="100" Margin="2" Grid.Column="0" Grid.Row="0" IsEnabled="True" Click="BtnPolacz_Click"/>
+        <Button Name="BtnRozlacz" Content="Rozłącz" Width="100" Margin="2" Grid.Column="1" Grid.Row="0" IsEnabled="False" Click="BtnRozlacz_Click"/>
+
+        <Label Content="Stan połączenia:" HorizontalContentAlignment="Right" Margin="2" Grid.Column="2" Grid.Row="0" />
+        <TextBox Name="txtStan" IsEnabled="False" Margin="2" Grid.Column="3" Grid.Row="0" VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
+
+        <TabControl Name="Hurtownia" Margin="2" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" MinHeight="300">
+            <TabItem Header="Dostawcy" IsSelected="True">
+                <!-- Dostawcy -->
+                <ListView x:Name="lstDostawcy" SelectionChanged="lstDostawcy_SelectionChanged">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="True">
+                            <GridViewColumn Header="ID Dostawcy" DisplayMemberBinding="{Binding dostawcaID}" Width="Auto"/>
+                            <GridViewColumn Header="Nazwa firmy" DisplayMemberBinding="{Binding nazwaFirmy}" Width="Auto" />
+                            <GridViewColumn Header="Nazwa" DisplayMemberBinding="{Binding nazwa}" Width="Auto" />
+                            <GridViewColumn Header="Stanowisko" DisplayMemberBinding="{Binding stanowisko}" Width="Auto" />
+                            <GridViewColumn Header="Adres" DisplayMemberBinding="{Binding adres}" Width="Auto" />
+                            <GridViewColumn Header="Miasto" DisplayMemberBinding="{Binding miasto}" Width="Auto" />
+                            <GridViewColumn Header="Kod Pocztowy" DisplayMemberBinding="{Binding kodPocztowy}" Width="Auto" />
+                            <GridViewColumn Header="telefon" DisplayMemberBinding="{Binding telefon}" Width="Auto" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Kategorie">
+                <!-- Kategorie -->
+                <ListView x:Name="lstKategorie" SelectionChanged="lstKategorie_SelectionChanged">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="True">
+                            <GridViewColumn Header="ID Kategorii" DisplayMemberBinding="{Binding kategoriaID}" Width="Auto"/>
+                            <GridViewColumn Header="Nazwa Kategorii" DisplayMemberBinding="{Binding nazwaKategoria}" Width="Auto" />
+                            <GridViewColumn Header="Opis" DisplayMemberBinding="{Binding opis}" Width="Auto" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Klienci">
+                <!-- Klienci -->
+                <ListView x:Name="lstKlienci" SelectionChanged="lstKlienci_SelectionChanged">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="True">
+                            <GridViewColumn Header="ID Klienta" DisplayMemberBinding="{Binding klientID}" Width="Auto"/>
+                            <GridViewColumn Header="Nazwa firmy" DisplayMemberBinding="{Binding nazwaFirmy}" Width="Auto" />
+                            <GridViewColumn Header="nazwa Kontaktowa" DisplayMemberBinding="{Binding nazwaKontaktowa}" Width="Auto" />
+                            <GridViewColumn Header="Adres" DisplayMemberBinding="{Binding adres}" Width="Auto" />
+                            <GridViewColumn Header="Miasto" DisplayMemberBinding="{Binding miasto}" Width="Auto" />
+                            <GridViewColumn Header="KodPocztowy" DisplayMemberBinding="{Binding kodPocztowy}" Width="Auto" />
+                            <GridViewColumn Header="Kraj" DisplayMemberBinding="{Binding kraj}" Width="Auto" />
+                            <GridViewColumn Header="Telefon" DisplayMemberBinding="{Binding telefon}" Width="Auto" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Kurierzy">
+                <!-- Kuriererzy -->
+                <ListView x:Name="lstKurierzy" SelectionChanged="lstKurierzy_SelectionChanged">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="True">
+                            <GridViewColumn Header="ID Kuriera" DisplayMemberBinding="{Binding kurierID}" Width="Auto"/>
+                            <GridViewColumn Header="Nazwa firmy" DisplayMemberBinding="{Binding NazwaFirmy}" Width="Auto" />
+                            <GridViewColumn Header="Telefon" DisplayMemberBinding="{Binding telefon}" Width="Auto" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Pracownicy">
+                <!-- Pracownicy -->
+                <ListView x:Name="lstPracownicy" SelectionChanged="lstPracownicy_SelectionChanged">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="True">
+                            <GridViewColumn Header="ID pracownika" DisplayMemberBinding="{Binding pracownikID}" Width="Auto"/>
+                            <GridViewColumn Header="Imie" DisplayMemberBinding="{Binding imie}" Width="Auto" />
+                            <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding nazwisko}" Width="Auto" />
+                            <GridViewColumn Header="Data urodzenia" DisplayMemberBinding="{Binding dataUrodzenia}" Width="Auto" />
+                            <GridViewColumn Header="Data zatrudnienia" DisplayMemberBinding="{Binding dataZatrudnienia}" Width="Auto" />
+                            <GridViewColumn Header="Data zwolnienia" DisplayMemberBinding="{Binding dataZwolnienia}" Width="Auto" />
+                            <GridViewColumn Header="Pesel" DisplayMemberBinding="{Binding pesel}" Width="Auto" />
+                            <GridViewColumn Header="Adres" DisplayMemberBinding="{Binding adres}" Width="Auto" />
+                            <GridViewColumn Header="Miasto" DisplayMemberBinding="{Binding miasto}" Width="Auto" />
+                            <GridViewColumn Header="E-mail" DisplayMemberBinding="{Binding email}" Width="Auto" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Produkty">
+                <!-- Produkty -->
+                <ListView x:Name="lstProdukty" SelectionChanged="lstProdukty_SelectionChanged">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="True">
+                            <GridViewColumn Header="ID produktu" DisplayMemberBinding="{Binding produktID}" Width="Auto"/>
+                            <GridViewColumn Header="Nazwa produkty" DisplayMemberBinding="{Binding nazwaProduktu}" Width="Auto" />
+                            <GridViewColumn Header="ID kategorii" DisplayMemberBinding="{Binding kategoriaID}" Width="Auto" />
+                            <GridViewColumn Header="ID dostawcy" DisplayMemberBinding="{Binding dostawcaID}" Width="Auto" />
+                            <GridViewColumn Header="Cena" DisplayMemberBinding="{Binding cena}" Width="Auto" />
+                            <GridViewColumn Header="Ilosc na magazynie" DisplayMemberBinding="{Binding iloscMagazyn}" Width="Auto" />
+                            <GridViewColumn Header="Ilość zamówiona" DisplayMemberBinding="{Binding iloscZamowienie}" Width="Auto" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+
+            <TabItem Header="Zamowienia">
+                <!-- Zamowienia -->
+                <ListView x:Name="lstZamowienia" SelectionChanged="lstZamowienia_SelectionChanged">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="True">
+                            <GridViewColumn Header="ID zamówienia" DisplayMemberBinding="{Binding zamowienieID}" Width="Auto"/>
+                            <GridViewColumn Header="ID pracownika" DisplayMemberBinding="{Binding pracownikID}" Width="Auto" />
+                            <GridViewColumn Header="ID kuriera" DisplayMemberBinding="{Binding kurierID}" Width="Auto" />
+                            <GridViewColumn Header="ID klienta" DisplayMemberBinding="{Binding klientID}" Width="Auto" />
+                            <GridViewColumn Header="Data zamówienia" DisplayMemberBinding="{Binding dataZamowienia}" Width="Auto" />
+                            <GridViewColumn Header="Data nadania" DisplayMemberBinding="{Binding dataNadania}" Width="Auto" />
+                            <GridViewColumn Header="Adres docelowy" DisplayMemberBinding="{Binding adresDocelowy}" Width="Auto" />
+                            <GridViewColumn Header="Miasto docelowe" DisplayMemberBinding="{Binding miastoDocelowe}" Width="Auto" />
+                            <GridViewColumn Header="Kod pocztowy" DisplayMemberBinding="{Binding kodPocztowy}" Width="Auto" />
+                            <GridViewColumn Header="Kraj dostarczenia" DisplayMemberBinding="{Binding krajDostarczenia}" Width="Auto" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+            </TabItem>
+
+            <TabItem Header="Zamowienia Szczegoly">
+                <!-- Zamowienia szczegóły -->
+                <ListView x:Name="lstZamowieniaSzczegoly" SelectionChanged="lstZamowieniaSzczegoly_SelectionChanged">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="True">
+                            <GridViewColumn Header="ID zamówienia" DisplayMemberBinding="{Binding zamowienieID}" Width="Auto"/>
+                            <GridViewColumn Header="ID produktu" DisplayMemberBinding="{Binding produktID}" Width="Auto" />
+                            <GridViewColumn Header="Ilość" DisplayMemberBinding="{Binding ilosc}" Width="Auto" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+            </TabItem>
+
+
+
+
+
+        </TabControl>
+
+        <WrapPanel Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="32,6,229.047,6">
+            <Button Name="BtnDodaj" IsEnabled="False" Content="Dodaj" Width="100" Margin="2" Click="BtnDodaj_Click"/>
+            <Button Name="BtnAktualizuj" IsEnabled="False" Content="Aktualizuj" Width="100" Margin="2" Click="BtnAktualizuj_Click"/>
+            <Button Name="BtnUsun" IsEnabled="False" Content="Usuń" Width="100" Margin="2" Click="BtnUsun_Click"/>
+        </WrapPanel>
+
+
+
+    </Grid>
+</Window>
